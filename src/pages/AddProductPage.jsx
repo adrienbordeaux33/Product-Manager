@@ -8,7 +8,6 @@ function AddProductPage() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    console.log("bonjour");
     console.log({
       name,
       description,
@@ -24,7 +23,9 @@ function AddProductPage() {
     };
     try {
       const newProduct = await addProduct(product);
+
       console.log("Produit ajouté :", newProduct);
+      alert("Produit ajouté avec succès !");
     } catch (error) {
       console.error("Erreur lors de l'ajout du produit :", error);
       alert("Erreur lors de l'ajout du produit. Veuillez réessayer.");

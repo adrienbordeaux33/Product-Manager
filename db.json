@@ -23,14 +23,6 @@
       "price": 299,
       "available": true,
       "image": "https://www.placehold.co/400x200/red/brown"
-    },
-    {
-      "name": "ertyu",
-      "description": "eryu",
-      "price": 456,
-      "available": true,
-      "image": "https://placeholder.com/400x200",
-      "id": "aA7AG_iKEnM"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -1,10 +1,22 @@
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router";
-import { getProductById } from "../services/productService";
+import { useParams, Link, useNavigate } from "react-router";
+import { getProductById, deleteProduct } from "../services/productService";
 
 function ProductDetailsPage() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+  const navigate = useNavigate();
+
+  async function handleDelete() {
+    try {
+      await deleteProduct(id);
+      alert("Produit supprimé avec succès !");
+      navigate("/");
+    } catch (error) {
+      console.error("Erreur lors de la suppression du produit :", error);
+      alert("Erreur lors de la suppression du produit. Veuillez réessayer.");
+    }
+  }
 
   useEffect(() => {
     getProductById(id)
@@ -24,6 +36,9 @@ function ProductDetailsPage() {
       <Link to="/" className="btn btn-secondary">
         Retour aux produits
       </Link>
+      <button className="btn btn-danger ms-2" onClick={handleDelete}>
+        Supprimer le produit
+      </button>
     </div>
   );
 }
