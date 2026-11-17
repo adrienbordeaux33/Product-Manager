@@ -37,3 +37,32 @@ export async function deleteProduct(id) {
     throw new Error("Erreur lors de la suppression");
   }
 }
+
+export async function updateProduct(id) {
+  const response = await fetch(`${API_URL}/${id}`, {
+    method: "PUT",
+  });
+  if (!response.ok) {
+    throw new Error("Erreur lors de la mise a jour");
+  }
+}
+
+export async function updatePartProduct(id) {
+  const response = await fetch(`${API_URL}/${id}`, {
+    method: "PATCH",
+  });
+  if (!response.ok) {
+    throw new Error("Erreur lors de la mise a jour");
+  }
+}
+
+export async function updateProductAvailability(id, available) {
+  const response = await fetch(`${API_URL}/${id}`, {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ available }),
+  });
+  if (!response.ok) {
+    throw new Error("Erreur lors de la mise a jour de la disponibilite");
+  }
+}

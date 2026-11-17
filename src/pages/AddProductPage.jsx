@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { addProduct } from "../services/productService";
 
-function AddProductPage() {
+export default function AddProductPage() {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
@@ -60,4 +60,3 @@ function AddProductPage() {
     </div>
   );
 }
-export default AddProductPage;

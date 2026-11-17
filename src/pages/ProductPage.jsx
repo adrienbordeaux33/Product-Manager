@@ -2,7 +2,7 @@ import { getProducts } from "../services/productService";
 import { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
 
-function ProductPage() {
+export default function ProductPage() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     getProducts()
@@ -21,5 +21,3 @@ function ProductPage() {
     </div>
   );
 }
-
-export default ProductPage;
