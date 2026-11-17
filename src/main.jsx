@@ -10,6 +10,8 @@ createRoot(document.getElementById("root")).render(
     <BrowserRouter>
       <Navbar />
       <App />
+      {/* src/App.jsx : le composant racine de ton interface. */}
     </BrowserRouter>
   </React.StrictMode>,
 );
+// src/main.jsx : c’est le point d’entrée du code JavaScript/React. Il importe React, fait le createRoot(document.getElementById('root')).render(<App />) et lance ton composant principal.

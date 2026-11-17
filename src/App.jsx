@@ -14,3 +14,4 @@ function App() {
   );
 }
 export default App;
+// src/App.jsx : le composant racine de ton interface.
